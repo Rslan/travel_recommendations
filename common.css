@@ -1,11 +1,11 @@
-body {
+/* body {
     background-image: url("./resources/new-york.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-}
+} */
 
 /* Basic CSS for the navigation bar */
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
