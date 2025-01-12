@@ -20,7 +20,7 @@ function searchDestination() {
                 `;
             }
         })
-        .catch(error => console.log("Failed to fetch data:", error))
+        .catch(error => resultDiv.innerHTML = "Destination not found")
 }
 
 function getDestinations(data, destinationRequest) {
