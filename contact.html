@@ -3,6 +3,7 @@
 
 <head>
     <title>Contact Us</title>
+    <link rel="stylesheet" href="./common.css" />
 </head>
 
 <body>
@@ -13,7 +14,28 @@
             <li><a href="./contact.html" id="contact">Contact Us</a></li>
         </ul>
     </nav>
-
+    <h1>Contact us</h1>
+    <p>Get in touch</p>
+    <form id="contactForm">
+        <div>
+            <label for="inputName">Name</label>
+            <input type="text" id="inputName" name="inputName" required/>
+        </div>
+        <div>
+            <label for="inputEmail">Email</label>
+            <input type="text" id="inputEmail" name="inputEmail" required/>
+        </div>
+        <div>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" onclick="submitContactForm()">Submit</button>
+    </form>
+    <script>
+        function submitContactForm() {
+            alert('Thank you for contacting us!');
+        }
+    </script>
 </body>
 
 </html>
