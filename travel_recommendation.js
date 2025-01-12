@@ -10,17 +10,24 @@ function searchDestination() {
         .then(response => response.json())
         .then(data => {
             var destinationData = getDestinations(data, destinationRequest);
-            resultDiv.innerHTML = "";
-            for (const dest of destinationData) {
-                resultDiv.innerHTML += `
-                <img src="${dest.imageUrl}">
-                <h2>${dest.name}</h2>
-                <p>${dest.description}</p>
-                <button id="${dest.name}">Visit</button>
-                `;
+            if (destinationData) {
+                resultDiv.innerHTML = "";
+                for (const dest of destinationData) {
+                    resultDiv.innerHTML += `
+                    <img src="${dest.imageUrl}">
+                    <h2>${dest.name}</h2>
+                    <p>${dest.description}</p>
+                    <button id="${dest.name}">Visit</button>
+                    `;
+                }    
+            } else {
+                resultDiv.innerHTML = "Destination not found";
             }
         })
-        .catch(error => resultDiv.innerHTML = "Destination not found")
+        .catch(error => {
+            console.log("Error:", error);
+            resultDiv.innerHTML = "An error occurred while fetching data";
+        })
 }
 
 function getDestinations(data, destinationRequest) {
